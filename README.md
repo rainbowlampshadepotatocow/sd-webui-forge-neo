@@ -165,6 +165,11 @@ The name "Forge" is inspired by "Minecraft Forge". This project aims to become t
     - require **on-the-fly** LoRA
     - require syntax `<lora:name:[w1@t1, w2@t2, ...]>`
     - see [comment](https://github.com/Haoming02/sd-webui-forge-classic/issues/1439#issuecomment-5539099537) for example
+- [X] Implement **Task Queueing** for txt2img/img2img
+    - per-tab Queue button with count badge
+    - enqueue generations while one is running; Generate hidden until queue clears
+    - segmented Queue | Interrupt | Skip controls
+    - by default, Ctrl+Enter adds a task to the queue when running; enable "Revert [Ctrl + Enter] to only interrupt the generation (disable Task Queueing)" in Settings -> UI Alternatives to revert to only interrupting
 
 #### Removed Features
 
