@@ -153,11 +153,16 @@ document.addEventListener("keydown", function (e) {
     const generateButton = tabContent.querySelector("button[id$=_generate]");
     const interruptButton = tabContent.querySelector("button[id$=_interrupt]");
     const skipButton = tabContent.querySelector("button[id$=_skip]");
+    const queueButton = tabContent.querySelector("button[id$=_queue]");
 
     if (isCtrlKey && isEnter) {
         e.preventDefault();
 
         if (interruptButton.style.display === "block") {
+            if (queueButton && !opts.ctrl_enter_interrupt) {
+                queueButton.click();
+                return;
+            }
             interruptButton.click();
             if (opts.ctrl_enter_interrupt) return;
 
